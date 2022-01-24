@@ -1,31 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Greetings from "./Greetings";
-import Counter from "./Counter";
-import MyForm from "./MyForm";
-
-interface submitTypes {
-  name: string;
-  description: string;
-}
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Greetings from './Greetings';
+import Counter from './pages/Counter';
+import MyForm from './pages/MyForm';
 
 function App() {
-  const onClick = (name: string) => {
-    console.log(`say hello ${name}`);
-    return true;
-  };
+	// const onClick = (name: string) => {
+	// 	console.log(`say hello ${name}`);
+	// 	return true;
+	// };
 
-  const onSubmit = (form: submitTypes) => {
-    console.log(`form`, form);
-  };
-  return (
-    <div className="App">
-      <Greetings name="jisu" mark="yellow" optional onClick={onClick} />
-      <Counter />
-      <MyForm onSubmit={onSubmit} />
-    </div>
-  );
+	// const onSubmit = (form: submitTypes) => {
+	// 	console.log(`form`, form);
+	// };
+	return <div className="App">메인 페이지입니다.</div>;
 }
 
 export default App;
