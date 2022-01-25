@@ -4,6 +4,7 @@ import "./App.css";
 import Greetings from "./Greetings";
 import Counter from "./Counter";
 import MyForm from "./MyForm";
+import BasicTable from "./components/Table/BasicTable";
 
 interface submitTypes {
   name: string;
@@ -24,6 +25,7 @@ function App() {
       <Greetings name="jisu" mark="yellow" optional onClick={onClick} />
       <Counter />
       <MyForm onSubmit={onSubmit} />
+      <BasicTable />
     </div>
   );
 }
