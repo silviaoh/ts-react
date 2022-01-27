@@ -11,6 +11,7 @@ import PieChart from "./pages/PieChart";
 import LineChart from "./pages/LineChart";
 import BarChart from "./pages/BarChart";
 import GlobalFilteringTable from "./components/Table/GlobalFilteringTable";
+import PaginationTable from "./components/Table/PaginationTable";
 interface submitTypes {
   name: string;
   description: string;
@@ -40,7 +41,8 @@ function App() {
 			/> */}
       {/* <BasicTable /> */}
       {/* <SortingTable /> */}
-      <GlobalFilteringTable />
+      {/* <GlobalFilteringTable /> */}
+      <PaginationTable />
       {/* <PieChart />
 			<LineChart />
 			<BarChart /> */}
