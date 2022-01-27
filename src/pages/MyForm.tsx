@@ -1,38 +1,56 @@
-import React, { useState } from 'react';
-
-interface MyFormProps {
-	onSubmit: (form: { name: string; description: string }) => void;
-}
+import { useState, useEffect } from 'react';
+import { Formik, Form } from 'formik';
+import FormikControl from '../formik-control';
+const id = 'daum-postcode'; // script가 이미 rending 되어 있는지 확인하기 위한 ID
+const src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
 
 const MyForm = () => {
-	// const [form, setForm] = useState({ name: "", description: "" });
+	const [input, setInput] = useState<string | number>('');
 
-	// const { name, description } = form;
+	const loadLayout = () => {
+		window.daum.postcode.load(() => {
+			const postcode = new window.daum.Postcode({
+				oncomplete: function (data) {
+					console.log('data', data);
+					setInput(data.zonecode);
+				},
+			});
+			postcode.open();
+		});
+	};
 
-	// const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-	//   // e 값을 무엇으로 설정해야할까요?
-	//   // 일단 모를 때는 any로 설정
-	//   const { name, value } = e.target;
-	//   setForm({ ...form, [name]: value });
-	// };
+	type InitialProps = {
+		zonecode: number | string;
+	};
 
-	// const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-	//   // 여기도 모르니까 any
-	//   e.preventDefault();
-	//   onSubmit(form);
-	//   setForm({
-	//     name: "",
-	//     description: "",
-	//   }); // 초기화
-	// };
+	console.log('input', input);
+
+	useEffect(() => {
+		// script 없는지 확인하고 추가
+		const isAlready = document.getElementById(id);
+
+		if (!isAlready) {
+			const script = document.createElement('script');
+			script.src = src;
+			script.id = id;
+			document.body.append(script);
+		}
+	}, []);
 
 	return (
-		<form>
-			MyForm 입니다.
-			{/* <input name="name" value={name} onChange={onChange} />
-      <input name="description" value={description} onChange={onChange} />
-      <button type="submit">등록</button> */}
-		</form>
+		<div>
+			<Formik initialValues={{ zonecode: input }} onSubmit={(values: InitialProps) => console.log('first')}>
+				{(formik) => (
+					<Form>
+						{console.log('formik', formik)}
+						<FormikControl control="input" label="우편번호" name="zonecode" type="number" />
+						<button type="button" onClick={loadLayout}>
+							우편번호 찾기
+						</button>
+					</Form>
+				)}
+			</Formik>
+		</div>
 	);
 };
 
