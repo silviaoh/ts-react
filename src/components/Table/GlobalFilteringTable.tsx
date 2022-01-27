@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import styled from "styled-components";
 // GlobalFiltering 2. import useGlobalFilter
-import { useTable, useGlobalFilter } from "react-table";
+// Column Filtering 2. useFilters
+import { useTable, useGlobalFilter, useFilters } from "react-table";
 import MOCK_DATA from "./MOCK_DATA.json";
 import { COLUMNS } from "./columns";
 import { GlobalFilter } from "./GlobalFilter";
@@ -28,7 +29,8 @@ const GlobalFilteringTable = (): JSX.Element => {
       data,
     },
     // GlobalFiltering 3. 두번째 인자로 넣기
-    useGlobalFilter
+    useGlobalFilter,
+    useFilters
   );
 
   // GlobalFiltering 5.
@@ -47,6 +49,9 @@ const GlobalFilteringTable = (): JSX.Element => {
                 {headerGroup.headers.map((column) => (
                   <th {...column.getHeaderProps()}>
                     {column.render("Header")}
+                    <div>
+                      {column.canFilter ? column.render("Filter") : null}
+                    </div>
                   </th>
                 ))}
               </tr>
