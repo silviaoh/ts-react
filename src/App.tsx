@@ -1,33 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import styled from 'styled-components';
-import Greetings from './Greetings';
-import Counter from './pages/Counter';
-import MyForm from './pages/MyForm';
-import BasicTable from './components/Table/BasicTable';
-import SortingTable from './components/Table/SortingTable';
-import PieChart from './pages/PieChart';
-import LineChart from './pages/LineChart';
-import BarChart from './pages/BarChart';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import styled from "styled-components";
+import Greetings from "./Greetings";
+import Counter from "./pages/Counter";
+import MyForm from "./pages/MyForm";
+import BasicTable from "./components/Table/BasicTable";
+import SortingTable from "./components/Table/SortingTable";
+import PieChart from "./pages/PieChart";
+import LineChart from "./pages/LineChart";
+import BarChart from "./pages/BarChart";
+import GlobalFilteringTable from "./components/Table/GlobalFilteringTable";
 interface submitTypes {
-	name: string;
-	description: string;
+  name: string;
+  description: string;
 }
 
 function App() {
-	// const onClick = (name: string) => {
-	// 	console.log(`say hello ${name}`);
-	// 	return true;
-	// };
+  // const onClick = (name: string) => {
+  // 	console.log(`say hello ${name}`);
+  // 	return true;
+  // };
 
-	const onSubmit = (form: submitTypes) => {
-		console.log(`form`, form);
-	};
+  const onSubmit = (form: submitTypes) => {
+    console.log(`form`, form);
+  };
 
-	return (
-		<AppFrame className="App">
-			{/* <Greetings
+  return (
+    <AppFrame className="App">
+      {/* <Greetings
 				name="jisu"
 				mark="yellow"
 				optional
@@ -37,17 +38,18 @@ function App() {
 			<MyForm
 			// onSubmit={onSubmit}
 			/> */}
-			{/* <BasicTable /> */}
-			<SortingTable />
-			{/* <PieChart />
+      {/* <BasicTable /> */}
+      {/* <SortingTable /> */}
+      <GlobalFilteringTable />
+      {/* <PieChart />
 			<LineChart />
 			<BarChart /> */}
-		</AppFrame>
-	);
+    </AppFrame>
+  );
 }
 
 export default App;
 
 const AppFrame = styled.div`
-	background-color: white;
+  background-color: white;
 `;
