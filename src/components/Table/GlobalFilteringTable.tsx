@@ -6,10 +6,18 @@ import { useTable, useGlobalFilter, useFilters } from "react-table";
 import MOCK_DATA from "./MOCK_DATA.json";
 import { COLUMNS } from "./columns";
 import { GlobalFilter } from "./GlobalFilter";
+import { ColumnFilter } from "./ColumnFilter";
 
 const GlobalFilteringTable = (): JSX.Element => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
+
+  // Filter: ColumnFilter 일일히 설정하지 않아도 적용할 수 잇는 방법
+  const defaultColumn = useMemo(() => {
+    return {
+      Filter: ColumnFilter,
+    };
+  }, []);
 
   const {
     // Basic
@@ -27,6 +35,7 @@ const GlobalFilteringTable = (): JSX.Element => {
     {
       columns,
       data,
+      defaultColumn,
     },
     // GlobalFiltering 3. 두번째 인자로 넣기
     useGlobalFilter,

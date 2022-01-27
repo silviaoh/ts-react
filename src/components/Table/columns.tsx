@@ -23,7 +23,7 @@ export const COLUMNS = [
     Header: "상태",
     Footer: "상태",
     accessor: "status" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "접수일시",
@@ -32,43 +32,43 @@ export const COLUMNS = [
     Cell: ({ value }: DateValue) => {
       return format(new Date(value), "dd/MM/yyyy");
     },
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "고객명",
     Footer: "고객명",
     accessor: "clientName" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "지역",
     Footer: "지역",
     accessor: "location" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "대분류",
     Footer: "대분류",
     accessor: "lCategory" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "제품명",
     Footer: "제품명",
     accessor: "productName" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "불량내용",
     Footer: "불량내용",
     accessor: "description" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "처리기사",
     Footer: "처리기사",
     accessor: "engineer" as keyof ExampleObject,
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     // feat2: 버튼
@@ -79,7 +79,7 @@ export const COLUMNS = [
     Cell: (): JSX.Element => {
       return <button>확인/변경</button>;
     },
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
   {
     Header: "카테고리",
@@ -91,6 +91,6 @@ export const COLUMNS = [
         return <p key={`${string}${idx}`}>{string}</p>;
       });
     },
-    Filter: ColumnFilter,
+    // Filter: ColumnFilter,
   },
 ];
