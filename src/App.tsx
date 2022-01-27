@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
 import Greetings from './Greetings';
 import Counter from './pages/Counter';
 import MyForm from './pages/MyForm';
 import BasicTable from './components/Table/BasicTable';
+import SortingTable from './components/Table/SortingTable';
 import PieChart from './pages/PieChart';
 import LineChart from './pages/LineChart';
 import BarChart from './pages/BarChart';
@@ -24,7 +26,7 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<AppFrame className="App">
 			{/* <Greetings
 				name="jisu"
 				mark="yellow"
@@ -36,11 +38,16 @@ function App() {
 			// onSubmit={onSubmit}
 			/> */}
 			{/* <BasicTable /> */}
-			<PieChart />
+			<SortingTable />
+			{/* <PieChart />
 			<LineChart />
-			<BarChart />
-		</div>
+			<BarChart /> */}
+		</AppFrame>
 	);
 }
 
 export default App;
+
+const AppFrame = styled.div`
+	background-color: white;
+`;
