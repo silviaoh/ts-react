@@ -31,6 +31,7 @@ const GlobalFilteringTable = (): JSX.Element => {
     // 4. globalFilter
     state,
     setGlobalFilter,
+    setFilter,
   } = useTable(
     {
       columns,
@@ -42,13 +43,19 @@ const GlobalFilteringTable = (): JSX.Element => {
     useFilters
   );
 
-  // GlobalFiltering 5.
+  // GlobalFiltering 5. filter: filter된 값이 들어감.
   const { globalFilter } = state;
+
+  console.log(`globalFilter`, globalFilter);
 
   // GlobalFiltering 6.
   return (
     <>
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+      <GlobalFilter
+        filter={globalFilter}
+        setGlobalFilter={setGlobalFilter}
+        setFilter={setFilter}
+      />
       <TableFrame>
         {/* Basic */}
         <table {...getTableProps()}>

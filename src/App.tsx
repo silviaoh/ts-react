@@ -30,7 +30,7 @@ function App() {
 
   return (
     <AppFrame className="App">
-      <SelectingRowsTable />
+      <GlobalFilteringTable />
     </AppFrame>
   );
 }
