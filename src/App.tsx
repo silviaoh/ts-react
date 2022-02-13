@@ -12,6 +12,7 @@ import LineChart from "./pages/LineChart";
 import BarChart from "./pages/BarChart";
 import GlobalFilteringTable from "./components/Table/GlobalFilteringTable";
 import PaginationTable from "./components/Table/PaginationTable";
+import SelectingRowsTable from "./components/Table/SelectingRows/SelectingRowsTable";
 interface submitTypes {
   name: string;
   description: string;
@@ -29,23 +30,7 @@ function App() {
 
   return (
     <AppFrame className="App">
-      {/* <Greetings
-				name="jisu"
-				mark="yellow"
-				optional
-				// onClick={onClick}
-			/>
-			<Counter />
-			<MyForm
-			// onSubmit={onSubmit}
-			/> */}
-      {/* <BasicTable /> */}
-      {/* <SortingTable /> */}
-      {/* <GlobalFilteringTable /> */}
-      <PaginationTable />
-      {/* <PieChart />
-			<LineChart />
-			<BarChart /> */}
+      <SelectingRowsTable />
     </AppFrame>
   );
 }
