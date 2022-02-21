@@ -5,30 +5,6 @@ import * as XLSX from 'xlsx';
 /*
 액셀 다운로드 실제로 동작시키는 코드 -----
 */
-
-// const findExcelData = (sheetName: any, serverData: any) => {
-// 	// const {
-// 	//   getOutline,
-// 	//   getNumStock,
-// 	//   getAllotment,
-// 	//   getShareholders,
-// 	//   getFinancial,
-// 	//   getIncome,
-// 	//   getCashflow,
-// 	//   getIndicator,
-// 	//   getSubordinate,
-// 	//   getCeo,
-// 	//   getExecutive,
-// 	//   getEmployee,
-// 	//   getInvest,
-// 	// } = rebase(serverData);
-
-// 	switch (sheetName) {
-// 		default:
-// 			return;
-// 	}
-// };
-
 const s2ab = (s: any) => {
 	// convert s to arrayBuffer
 	const buf = new ArrayBuffer(s.length);
@@ -59,6 +35,7 @@ const exportExcel = (pageName: any, sheetName: any) => {
     2. 시트 만들기
       + 컬럼 너비 지정
   */
+	// XLSX.utils.aoa_to_sheet에 보여줄 데이터가 들어감
 	let newWorkSheet = XLSX.utils.aoa_to_sheet([['test'], [], ['row1', 'row2', 'row3']]);
 
 	newWorkSheet['!cols'] = Array(12).fill({ wch: 25 });
