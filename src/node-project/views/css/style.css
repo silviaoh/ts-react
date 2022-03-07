@@ -1,0 +1,90 @@
+/* global style */
+@font-face {
+	font-family: 'KOTRA_BOLD-Bold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'KOTRA_BOLD-Bold', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Gothic A1', sans-serif;
+	font-size: 14px;
+	background-color: '#635151';
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/**/
+
+.card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 595px;
+	height: 842px;
+	/* background-color: red; */
+	padding: 48px;
+	border: 1px solid #989898;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-size: 26px;
+	line-height: 37.73px;
+}
+
+.gray-title {
+	font-family: 'KOTRA_BOLD-Bold', sans-serif;
+	color: #989898;
+	text-align: center;
+	line-height: 29.02px;
+}
+
+hr {
+	width: 100%;
+	margin: 18px 0px;
+	color: #989898;
+}
+
+.content pre {
+	padding: 0 9.5px;
+	line-height: 40px;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.btn-frame {
+	text-align: center;
+}
+
+.confirm-button {
+	border: 0;
+	width: 153px;
+	height: 38px;
+	color: white;
+	font-weight: bold;
+	background-color: #4141e7;
+	border-radius: 7px;
+}
